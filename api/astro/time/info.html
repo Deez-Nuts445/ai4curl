@@ -1,0 +1,44 @@
+
+<a id="pen"></a>
+
+<title>a</title>
+<script>
+var today = new Date();
+var year = today.getFullYear()
+var month = today.getMonth()+1
+var day = today.getDate()
+var hour = today.getHours()
+var min = today.getMinutes()
+var sec = today.getSeconds()
+var ms = today.getMilliseconds()
+
+var data = [
+  { index: "year", value: year },
+  { index: "month", value: month },
+  { index: "day", value: day },
+  { index: "hour", value: hour },
+  { index: "min", value: min },
+  { index: "sec", value: sec },
+  { index: "ms", value: ms },
+];
+
+function packDataToJSON(data) {
+  // Create a new JSON object
+  var json = {};
+
+  // Loop through the data array and add each index-value pair to the JSON object
+  for (var i = 0; i < data.length; i++) {
+    json[data[i].index] = data[i].value;
+  }
+
+  // Convert the JSON object to a string
+  var jsonString = JSON.stringify(json);
+
+  // Return the JSON string
+  return jsonString;
+}
+
+// Includes year,month,day,hour,min,sec and ms
+
+document.getElementById("pen").innerText = packDataToJSON(data)
+</script>
