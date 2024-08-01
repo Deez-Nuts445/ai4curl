@@ -1,7 +1,12 @@
-<script>
-export default {
-  async fetch(request, env, ctx) {
-    return new Response('Hello World!');
-  },
-};
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World API</title>
+</head>
+<body>
+    <script>
+        const response = { message: "Hello World!" };
+        document.body.textContent = JSON.stringify(response);
+    </script>
+</body>
+</html>
