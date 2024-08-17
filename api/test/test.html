@@ -5,8 +5,11 @@
 </head>
 <body>
     <script>
-        const response = { message: "Hello World!" };
-        document.body.textContent = JSON.stringify(response);
+export default {
+  async fetch(request, env, ctx) {
+    return new Response('Hello World!');
+  },
+};
     </script>
 </body>
 </html>
